@@ -5,6 +5,12 @@
     box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header {
@@ -19,6 +25,10 @@
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
@@ -34,5 +44,36 @@
 .hotel-view {
     background-color: #fff;
     flex: 1; // ! element should grow as much as it can
-    height: 80rem;
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background-clip: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 4rem;
+    flex: 0 0 60%; // ! no shrink no grow just occupy 60% of the container
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+}
+
+.user-reviews {
+    flex: 1; // ! occupy the rest of available space
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
